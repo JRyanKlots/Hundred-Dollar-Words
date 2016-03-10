@@ -32,24 +32,17 @@ def getWordValue(s):
 def getHundredDollarWords():
 	fin = open("wordsEn.txt")
 	fout = open("hundred.txt", "w")
+	num_dollar = 0
+	num_total = 0
 	for s in fin:
 		if getWordValue(s) == 100:
 			fout.write(s)
+			num_dollar += 1
+		num_total += 1
 	fin.close()
 	fout.close()
+	print str(num_dollar) + " out of " + str(num_total) + " words are worth a dollar."
+	print "Open 'hundred.txt' to see them!"
 
 if __name__ == "__main__":
 	getHundredDollarWords()
-
-
-
-
-
-
-
-
-
-
-
-
-
